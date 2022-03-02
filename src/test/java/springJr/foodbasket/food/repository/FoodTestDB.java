@@ -1,8 +1,10 @@
-package springJr.foodbasket.food.domain;
+package springJr.foodbasket.food.repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
 
 import springJr.foodbasket.food.domain.model.Food;
 import springJr.foodbasket.food.domain.model.StoreLocation;
@@ -17,15 +19,15 @@ import springJr.foodbasket.food.domain.model.vegetable.Vegetable;
 
 public class FoodTestDB {
 
+	private static List<Food> foodTestDB = new ArrayList<>();
+
 	/**
 	 * @return
 	 * List of Foods
 	 */
-
 	private static LocalDateTime today = LocalDateTime.now();
 
 	public static List<Food> getTestDB() {
-		List<Food> foodTestDB = new ArrayList<>();
 		foodTestDB.add(vegetable1());
 		foodTestDB.add(vegetable2());
 		foodTestDB.add(meat1());
@@ -36,7 +38,6 @@ public class FoodTestDB {
 		foodTestDB.add(dairyProduct2());
 		foodTestDB.add(fruit1());
 		foodTestDB.add(fruit2());
-
 		return foodTestDB;
 	}
 
@@ -97,7 +98,7 @@ public class FoodTestDB {
 			.storeAt(today)
 			.storeLocation(StoreLocation.CHILL)
 			.quantity(3)
-			.expireAt(today.plusDays(3))
+			.expireAt(today)
 			.foodStatus(FoodStatus.NONE)
 			.build();
 	}
@@ -108,7 +109,7 @@ public class FoodTestDB {
 			.storeAt(today)
 			.storeLocation(StoreLocation.CHILL)
 			.quantity(6)
-			.expireAt(today.plusDays(1))
+			.expireAt(today)
 			.foodStatus(FoodStatus.WARN)
 			.build();
 	}

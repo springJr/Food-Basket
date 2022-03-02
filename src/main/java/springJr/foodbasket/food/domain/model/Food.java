@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@DiscriminatorColumn
+@DiscriminatorColumn(name="type")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public class Food {
