@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/foodbasket
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fooddb?serverTimezone=UTC&characterEncoding=UTF-8
+    username: fooddbuser
+    password: fooddbpassword
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
         #      show_sql: true -> ??? System.out ?? ??
@@ -15,5 +15,6 @@ spring:
 
 logging:
   level:
+    springJr.foodbasket: debug
     org.hibernate.SQL: debug # ?? log? ??
-    org.hibernate.type: trace
+    org.hibernate.type: debug
