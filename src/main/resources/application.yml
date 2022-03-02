@@ -6,10 +6,10 @@ spring:
     password: fooddbpassword
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate:
-        #      show_sql: true -> ??? System.out ?? ??
+        show_sql: true
         format_sql: true
 
 

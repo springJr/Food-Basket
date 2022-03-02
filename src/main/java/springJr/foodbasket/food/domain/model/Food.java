@@ -1,6 +1,6 @@
 package springJr.foodbasket.food.domain.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -15,8 +15,10 @@ import javax.persistence.InheritanceType;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @DiscriminatorColumn
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -27,16 +29,16 @@ public class Food {
 	private Long id;
 
 	@Column(nullable = false, length = 20)
-	private String name;
+	protected String name;
 
 	@Column(nullable = false)
-	private LocalDate storeAt;
+	protected LocalDateTime storeAt;
 
 	@Enumerated(EnumType.STRING)
-	private StoreLocation storeLocation;
+	protected StoreLocation storeLocation;
 
 	@Column(nullable = false)
-	private int quantity;
+	protected int quantity;
 }
 
 
