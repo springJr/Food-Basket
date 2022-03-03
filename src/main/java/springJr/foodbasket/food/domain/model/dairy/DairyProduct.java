@@ -2,6 +2,7 @@ package springJr.foodbasket.food.domain.model.dairy;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 import lombok.Builder;
@@ -12,6 +13,7 @@ import springJr.foodbasket.food.domain.model.StoreLocation;
 
 @NoArgsConstructor
 @Getter
+@DiscriminatorValue("dairy")
 @Entity
 public class DairyProduct extends Food {
 
