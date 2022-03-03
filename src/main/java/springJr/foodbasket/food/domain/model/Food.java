@@ -3,7 +3,6 @@ package springJr.foodbasket.food.domain.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,10 +14,8 @@ import javax.persistence.InheritanceType;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
