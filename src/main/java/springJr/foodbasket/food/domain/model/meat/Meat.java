@@ -1,9 +1,9 @@
 package springJr.foodbasket.food.domain.model.meat;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -16,6 +16,7 @@ import springJr.foodbasket.food.domain.model.StoreLocation;
 
 @NoArgsConstructor
 @Getter
+@DiscriminatorValue("meat")
 @Entity
 public class Meat extends Food {
 

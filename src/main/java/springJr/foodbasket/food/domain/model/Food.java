@@ -20,12 +20,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@DiscriminatorColumn(name="type")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public class Food {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "food_id")
 	private Long id;
 
 	@Column(nullable = false, length = 20)
@@ -39,6 +39,8 @@ public class Food {
 
 	@Column(nullable = false)
 	protected int quantity;
+
+
 }
 
 
